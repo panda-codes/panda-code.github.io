@@ -9,7 +9,7 @@
 <body>
     <div class="wrapper">
         <div class="f1">
-            <form action="">
+            <form action="" id="form">
                 <h1>Stay Updated!</h1>
                 <p>join 60,000+ product managers receiving 
                     monthly update on:</p>
@@ -29,5 +29,19 @@
             <!-- <img src="./illustration-sign-up-mobile.svg" alt="" width=""> -->
         </div>
     </div>
+    <script>
+        const form = document.getElementById('form');
+        const email = document.getElementById('email');
+
+        form.addEventListener('submit', function(e){
+         e.preventDefault();
+         
+         const userEmailValue =email.value;
+
+         localStorage.setItem('user-email',userEmailValue);
+
+         window.location.href = "newsletter2.html";
+        })
+    </script>
 </body>
 </html>
